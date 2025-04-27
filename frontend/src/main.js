@@ -9,5 +9,6 @@ const app = Vue.createApp({
     <div class="templateContainer">
 
         <header-component></header-component>
+        <slider-component></slider-component>
     </div>
 `})
