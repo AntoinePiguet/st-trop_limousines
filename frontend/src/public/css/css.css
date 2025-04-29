@@ -185,3 +185,46 @@ button:hover{
     border: solid #FFAF47 2px;
     transform: translateY(-1em);
 }
+
+/* contentBox */
+.contentBox{
+    position: relative;
+    height: 50vh;
+    margin-top: 24em;
+    border-radius:0 1em 1em 0;
+    
+}
+.contentBox img{
+    position: relative;
+    height: 50vh;
+    width: 85%;
+    object-fit: cover;
+    object-position: bottom;
+    border: solid 10px;
+    border-image: 
+    linear-gradient(
+      to left, 
+      #F4C566, 
+      rgba(0, 0, 0, 0)
+    ) 1 ;
+
+}
+.inBoxContent{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    top: 0;
+    margin: 4em 6em;
+
+
+
+}
+
+.Txt{
+    font-family: 'Inter';
+    color: #FCEECD;
+    font-size: 1.2em;
+    width: 20em;
+    margin-bottom: 2em;
+}
