@@ -11,7 +11,8 @@ app.component("slider-component", {
                 "../public/images/mercedes_group.png"
             ],
             logo: "../public/images/logoVariant.png",
-            tel: "+33 6 09 51 59 09"
+            tel: "+33 6 09 51 59 09",
+            deco: "../public/images/Deco.png"
         }
     },
 
@@ -23,6 +24,7 @@ app.component("slider-component", {
         <div class=slider>
                 <img class="sliderImg" :src="currentImage"/>
                 <div class="overlay"></div>
+                <img class="deco" :src="deco"/>
         </div>
         <div class="bodySlider">
             <div class="titreDiv">

@@ -113,6 +113,10 @@ button:hover{
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
 }
+.deco{
+    width: 100%;
+
+}
 .bodySlider{
     position: relative;
     display: flex;
@@ -121,7 +125,7 @@ button:hover{
     justify-content: space-evenly;
     width: 100%;
     top: 0;
-    height: 100vh;
+    height: 95vh;
 }
 
 .logo{
