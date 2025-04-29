@@ -19,6 +19,7 @@ app.component("presentation-component", {
           "Our service will surpass your expectations.",
         ],
       ],
+      buttons: ["Our fleet", "About us"],
     };
   },
 
@@ -30,6 +31,7 @@ app.component("presentation-component", {
         <div class="inBoxContent">
             <div class="titreTxt">{{titles[index]}}</div>
             <div v-for="(content, index2) in contents[index]">{{contents[index][index2]}}</div>
+            <button class="contentButton">{{buttons[index]}}</button>
         </div>
     </div>
     `,
