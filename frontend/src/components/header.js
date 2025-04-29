@@ -13,10 +13,10 @@ template:
       <header id="header">
         <img :src="logo" id="headerLogo"/>
         <div id="headerButtons">
-            <a href="#headerLogo" class="homeButton" >Home</a>
-            <a href="#headerLogo" class="homeButton">Our fleet</a>
-            <a href="#headerLogo" class="homeButton">Book</a>
-            <a href="#headerLogo" class="homeButton">About us</a>
+            <a href="#headerLogo" class="homeButton" >HOME</a>
+            <a href="#headerLogo" class="homeButton">OUR FLEET</a>
+            <a href="#headerLogo" class="homeButton">BOOK</a>
+            <a href="#headerLogo" class="homeButton">ABOUT US</a>
         </div>
         <button id="contactButton" href="#headerLogo">Contact us</button>
       </header>
