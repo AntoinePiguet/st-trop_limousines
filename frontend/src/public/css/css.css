@@ -1,3 +1,21 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Regular.woff2') format('woff2'),
+         url('../fonts/Inter-Regular.woff') format('woff'),
+         url('../fonts/Inter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arapey';
+    src: url('../fonts/Arapey-Regular.woff2') format('woff2'),
+         url('../fonts/Arapey-Regular.woff') format('woff'),
+         url('../fonts/Arapey-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
     background-color: #0D0D0E;
 }
@@ -9,21 +27,47 @@ body{
   }
 #header{
     display: flex;
-    align-items: start; /* Aligner les images en haut */
+    position: absolute;
+    align-items:center;
+    justify-content: space-between; /* Aligner les images en haut */
     flex-direction: row;
+    width: 100%;
+    border-bottom: solid #FFF5DF 2px;
+
 }
 #headerLogo{
-    width: 6em;
+    width: 4em;
+    margin-left: 1em;
 }
 #headerButtons{
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(4, 1fr);
 }
+
 .homeButton{
-    padding: 2em;
+    font-family: 'Inter';
+    font-weight: 500;
+    padding:0.5em 3em;
+    color: #FFF5DF;
+    border-right: solid #FFF5DF 2px;
+    text-decoration: none;
+    font-size: 1.2em;
 }
+
 #contactButton{
-    margin: 2em;
+    margin:1em 2em;
+    padding: 0.5em 1.5em;
+    background-color: #151416;
+    color: #FFF5DF;
+    font-size: 1.3em;
+    border: solid 2px #FFF5DF;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#slider img{
+    width: 100%;
+    max-height: inherit;
 }
 .imageRack{
  display: flex;
