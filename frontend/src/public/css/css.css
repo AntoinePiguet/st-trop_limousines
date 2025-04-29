@@ -25,3 +25,25 @@ body{
 #contactButton{
     margin: 2em;
 }
+.imageRack{
+ display: flex;
+}
+.point{
+    width: 2em;
+    height: 2em;
+    border-radius: 1em;
+    border: #FFAF47;
+    background-color: #3C3C3C;
+}
+.activePoint{
+    background-color:#FFAF47;
+}
+.titreDiv{
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    height: 7em;
+}
+.titreTxt{
+    color: white;
+}
