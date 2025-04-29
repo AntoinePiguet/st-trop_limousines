@@ -1,93 +1,102 @@
 @font-face {
-    font-family: 'Inter';
-    src: url('../fonts/Inter-Regular.woff2') format('woff2'),
-         url('../fonts/Inter-Regular.woff') format('woff'),
-         url('../fonts/Inter-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.woff2") format("woff2"),
+    url("../fonts/Inter-Regular.woff") format("woff"),
+    url("../fonts/Inter-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Arapey';
-    src: url('../fonts/Arapey-Regular.woff2') format('woff2'),
-         url('../fonts/Arapey-Regular.woff') format('woff'),
-         url('../fonts/Arapey-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Arapey";
+  src: url("../fonts/Arapey-Regular.woff2") format("woff2"),
+    url("../fonts/Arapey-Regular.woff") format("woff"),
+    url("../fonts/Arapey-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-body{
-    background-color: #0D0D0E;
+body {
+  background-color: #0d0d0e;
+  color: #fff5df;
 }
 
 .templateContainer {
-    display: flex;
-    flex-direction: column;
-    font-family: "Atlas Grotesk", sans-serif;
-  }
-#header{
-    display: flex;
-    position: absolute;
-    align-items:center;
-    justify-content: space-between; /* Aligner les images en haut */
-    flex-direction: row;
-    width: 100%;
-    border-bottom: solid #FFF5DF 2px;
-
+  display: flex;
+  flex-direction: column;
+  font-family: "Atlas Grotesk", sans-serif;
 }
-#headerLogo{
-    width: 4em;
-    margin-left: 1em;
+#header {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: space-between; /* Aligner les images en haut */
+  flex-direction: row;
+  width: 100%;
+  border-bottom: solid #fff5df 2px;
 }
-#headerButtons{
-    display: flex;
-    grid-template-columns: repeat(4, 1fr);
+#headerLogo {
+  width: 4em;
+  margin-left: 1em;
 }
-
-.homeButton{
-    font-family: 'Inter';
-    font-weight: 500;
-    padding:0.5em 3em;
-    color: #FFF5DF;
-    border-right: solid #FFF5DF 2px;
-    text-decoration: none;
-    font-size: 1.2em;
+#headerButtons {
+  display: flex;
+  grid-template-columns: repeat(4, 1fr);
 }
 
-#contactButton{
-    margin:1em 2em;
-    padding: 0.5em 1.5em;
-    background-color: #151416;
-    color: #FFF5DF;
-    font-size: 1.3em;
-    border: solid 2px #FFF5DF;
-    border-radius: 5px;
-    cursor: pointer;
+.homeButton {
+  font-family: "Inter";
+  font-weight: 500;
+  padding: 0.5em 3em;
+  color: #fff5df;
+  border-right: solid #fff5df 2px;
+  text-decoration: none;
+  font-size: 1.2em;
 }
 
-#slider img{
-    width: 100%;
-    max-height: inherit;
+#contactButton {
+  margin: 1em 2em;
+  padding: 0.5em 1.5em;
+  background-color: #151416;
+  color: #fff5df;
+  font-size: 1.3em;
+  border: solid 2px #fff5df;
+  border-radius: 5px;
+  cursor: pointer;
 }
-.imageRack{
- display: flex;
+
+#slider img {
+  width: 100%;
+  max-height: inherit;
 }
-.point{
-    width: 2em;
-    height: 2em;
-    border-radius: 1em;
-    border: #FFAF47;
-    background-color: #3C3C3C;
+.imageRack {
+  display: flex;
 }
-.activePoint{
-    background-color:#FFAF47;
+.point {
+  width: 2em;
+  height: 2em;
+  border-radius: 1em;
+  border: #ffaf47;
+  background-color: #3c3c3c;
 }
-.titreDiv{
-    display: flex;
-    flex-direction: column;
-    width: 20em;
-    height: 7em;
+.activePoint {
+  background-color: #ffaf47;
 }
-.titreTxt{
-    color: white;
+.titreDiv {
+  display: flex;
+  flex-direction: column;
+  width: 30em;
+  height: 7em;
+}
+.titreTxt {
+  font-size: 4em;
+}
+.contentBox1 {
+  margin-top: 30em;
+}
+.contentBox2 {
+  margin-top: 30em;
+}
+.logo {
+  width: 20em;
 }
