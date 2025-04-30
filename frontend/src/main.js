@@ -10,6 +10,7 @@ const app = Vue.createApp({
 
         <header-component></header-component>
         <slider-component></slider-component>
-        <presentation-component ></presentation-component>
+        <presentation-component></presentation-component>
+        <footer-component></footer-component>
     </div>
 `})
