@@ -6,7 +6,7 @@ app.component("presentation-component", {
         "../public/images/mercedes_group.png",
         "../public/images/mercedes_class-S.png",
       ],
-      titles: ["Our Fleet", "Since 2016"],
+      titles: ["Our Fleet", "Since 2006"],
       contents: [
         [
           "The latest models of the Mercedes range.",
@@ -28,19 +28,27 @@ app.component("presentation-component", {
     `
     <div class="contentBox1">
         <img :src="images[0]"/>
+        <div class="overlay1"></div>
+        <div class="overlay-gradient1"></div>
         <div class="inBoxContent1">
-            <div class="titreTxt">{{titles[0]}}</div>
-            <div v-for="(content, index2) in contents[0]">{{contents[0][index2]}}</div>
-            <button class="contentButton">{{buttons[0]}}</button>
+            <div class="titreTxtBox">{{titles[0]}}</div>
+            <div class="button-text">
+                <div class="Txt" v-for="(content, index2) in contents[0]">{{contents[0][index2]}}</div>
+                <button class="contentButton">{{buttons[0]}}</button>
+            </div>
+            
         </div>
     </div>
 
     <div class="contentBox2">
       <img :src="images[1]"/>
+      <div class="overlay-gradient2"></div>
     <div class="inBoxContent2">
-      <div v-for="(content, index2) in contents[1]">{{contents[1][index2]}}</div>
-        <div class="titreTxt">{{titles[1]}}</div>
-        <button class="contentButton">{{buttons[1]}}</button>
+        <div class="button-text">
+            <div class="Txt" v-for="(content, index2) in contents[1]">{{contents[1][index2]}}</div>
+            <button class="contentButton">{{buttons[1]}}</button>
+        </div>
+        <div class="titreTxtBox">{{titles[1]}}</div>
       </div>
     </div>
     `,

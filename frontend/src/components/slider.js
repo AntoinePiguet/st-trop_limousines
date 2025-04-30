@@ -10,9 +10,9 @@ app.component("slider-component", {
                 
                 "../public/images/mercedes_group.png"
             ],
-            logo: "../public/images/logo.png",
-            texts: ["Saint Tropez", "Limousines"],
-            tel: "+33 6 09 51 59 09"
+            logo: "../public/images/logoVariant.png",
+            tel: "+33 6 09 51 59 09",
+            deco: "../public/images/Deco.png"
         }
     },
 
@@ -21,20 +21,26 @@ app.component("slider-component", {
     `
     
     <div class="frontTitre">
-        <img class="sliderImg" :src="currentImage"/>
-        <div class="titreDiv">
-            <img class="logo" :src="logo"/>
-            <div v-for="text in texts" class="titreTxt">
-            {{text}}
+        <div class=slider>
+                <img class="sliderImg" :src="currentImage"/>
+                <div class="overlay"></div>
+                <img class="deco" :src="deco"/>
+        </div>
+        <div class="bodySlider">
+            <div class="titreDiv">
+                <img class="logo" :src="logo"/>
+                <div  class="titreTxt">
+                    Saint Tropez <br> Limousines
+                </div>
+                <p class="titreTel">{{tel}}</p>
+                <button class="bookbutton">Book</button>
             </div>
-            <button class="titreTel">{{tel}}</button>
-            <button class="bookbutton">Book</button>
-        <div class="imageRack">
-            <div class="imagePoint" v-for="(image, index) in images" :key="index">
-                <button class="point" :class="{ activePoint: index === imageId }" @click="imageId = index"></button>
+            <div class="imageRack">
+                <div class="imagePoint" v-for="(image, index) in images" :key="index">
+                    <button class="point" :class="{ activePoint: index === imageId }" @click="imageId = index"></button>
+                </div>
             </div>
         </div>
-     </div>
     </div>
     `,
 
@@ -61,7 +67,7 @@ app.component("slider-component", {
         startTimer() {
             setTimeout(() => {
                 this.timerCount--;
-            }, 1000);
+            }, 3000);
         },
 
         changeImage() {

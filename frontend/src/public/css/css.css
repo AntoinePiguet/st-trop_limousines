@@ -1,3 +1,4 @@
+/* FONT IMPORT */
 @font-face {
   font-family: "Inter";
   src: url("../fonts/Inter-Regular.woff2") format("woff2"),
@@ -16,24 +17,56 @@
   font-style: normal;
 }
 
-body {
-  background-color: #0d0d0e;
-  color: #fff5df;
+/* MAIN */
+
+
+html, body {
+    background-color: #0D0D0E;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+button{
+    transition: transform 0.3s ease-in;
+    margin:0.75em 1em;
+    padding: 0.5em 1.5em;
+    background-color: #0B0F22;
+    color: #FFF3D6;
+    font-size: 1.3em;
+    border: solid 2px #FFF3D6;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #F4C566;
+    color: #0B0F22;
+    border: solid 2px #0B0F22;
+    transition: transform 0.3s ease-in;
 }
 
-.templateContainer {
-  display: flex;
-  flex-direction: column;
-  font-family: "Atlas Grotesk", sans-serif;
+/* HEADER */
+#header{
+    display: flex;
+    position: relative;
+    align-items:center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: solid #FFF5DF 2px;
+    z-index: 50;
+    transition: top 0.3s;
 }
-#header {
-  display: flex;
-  position: absolute;
-  align-items: center;
-  justify-content: space-between; /* Aligner les images en haut */
-  flex-direction: row;
-  width: 100%;
-  border-bottom: solid #fff5df 2px;
+
+.header-hidden {
+    top: -100px;
+}
+
+#headerLogo{
+    width: 4em;
+    margin-left: 0.5em;
 }
 #headerLogo {
   width: 4em;
@@ -44,65 +77,236 @@ body {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.homeButton {
-  font-family: "Inter";
-  font-weight: 500;
-  padding: 0.5em 3em;
-  color: #fff5df;
-  border-right: solid #fff5df 2px;
-  text-decoration: none;
-  font-size: 1.2em;
+.homeButton{
+    font-family: 'Inter';
+    font-weight: 500;
+    padding:0.5em 3em;
+    color: #FFF5DF;
+    border-right: solid #FFF5DF 2px;
+    text-decoration: none;
+    font-size: 1.1em;
 }
 
-#contactButton {
-  margin: 1em 2em;
-  padding: 0.5em 1.5em;
-  background-color: #151416;
-  color: #fff5df;
-  font-size: 1.3em;
-  border: solid 2px #fff5df;
-  border-radius: 5px;
-  cursor: pointer;
-}
 
-#slider img {
-  width: 100%;
-  max-height: inherit;
+/* SLIDER */
+.frontTitre{
+    width: auto;
 }
-.imageRack {
-  display: flex;
+.slider{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: block;
+    background-size: cover;
+    background-position: center;
 }
-.point {
-  width: 2em;
-  height: 2em;
-  border-radius: 1em;
-  border: #ffaf47;
-  background-color: #3c3c3c;
+.sliderImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
-.activePoint {
-  background-color: #ffaf47;
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
 }
-.titreDiv {
-  display: flex;
-  flex-direction: column;
-  width: 30em;
-  height: 7em;
-}
-.titreTxt {
-  font-size: 4em;
-}
-.contentBox1 {
-  margin-top: 30em;
-}
-.contentBox2 {
-  margin-top: 30em;
-}
-.logo {
-  width: 20em;
-}
-.contactList{
+.deco{
+    width: 100%;
 
 }
+.bodySlider{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    top: 0;
+    height: 95vh;
+}
+
+.logo{
+    width: 13em;
+}
+.titreDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .titreTxt{
+    font-family: 'Arapey';
+    margin-top: 0.75em ;
+    font-size: 4em;
+    color: #FCEECD;
+    text-align: center;
+  }
+.titreTel{
+
+    padding: 0.5em 1.5em;
+    background-color: transparent;
+    color: #FCEECD;
+    border: none;
+    font-family: 'Inter';
+    font-size: 2em;
+    font-size: 1.3em;
+    margin-top: 0.75em ;
+    border-radius: 5px;
+  }
+.bookbutton{
+    margin:0.75em 1em;
+    padding: 0.5em 1.5em;
+    background-color: #0B0F22;
+    color: #FFF3D6;
+    font-size: 1.3em;
+    border: solid 2px #FFF3D6;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.imageRack{
+ display: flex;
+ justify-content: space-around;
+ width: 10%;
+}
+.point{
+    width: 1em;
+    height: 1em;
+    border-radius: 50px;
+    padding: 0;
+    border: solid #FFAF47 2px;
+    background-color: #3C3C3C;
+    transition: transform 0.3s ease-in;
+}
+.activePoint{
+    background-color:#FFAF47;
+    border: solid #FFAF47 2px;
+    transform: translateY(-1em);
+}
+
+/* contentBox */
+.contentBox1, .contentBox2 {
+    display: flex;
+    
+    align-items: flex-start;
+    position: relative;
+    margin: 24em 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.contentBox1 img {
+    position: relative;
+    height: 50vh;
+    width: 85%;
+    object-fit: cover;
+    object-position: bottom;
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(to left, #F4C566, 
+    rgba(0, 0, 0, 0)) border-box;
+    border: 10px solid transparent;
+    border-radius: 15px;
+}
+
+.contentBox2 img {
+    position: relative;
+    height: 50vh;
+    width: 85%;
+    object-fit: cover;
+    object-position: bottom;
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, #F4C566, 
+    rgba(0, 0, 0, 0)) border-box;
+    border: 10px solid transparent;
+    border-radius: 15px;
+    margin-left: auto;
+}
+.overlay1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 85%;
+    height: 50vh;
+    background: rgba(0, 0, 0, 0.3);
+    margin-left: auto;
+}
+.overlay2{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 85%;
+    height: 50vh;
+    background: rgba(0, 0, 0, 0.3);
+
+}
+.overlay-gradient1{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 85%;
+    height: 50vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), 
+    rgba(0, 0, 0, 0));
+    margin-left: auto;
+}
+.overlay-gradient2{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 85%;
+    height: 50vh;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.6), 
+    rgba(0, 0, 0, 0));
+    margin-left: auto;
+}
+
+.inBoxContent2{
+    position: absolute;
+    display: flex;
+    justify-content: space-between; 
+    right: 0;
+    width: 70%;
+    height: 100%;
+    top: 0;
+    margin: 2em 6em;
+}
+.inBoxContent1{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    top: 0;
+    margin: 3em 6em;
+}
+
+
+.Txt{
+    font-family: 'Inter';
+    align-items: end;
+    color: #FCEECD;
+    font-size: 1.3em;
+    width: 30em;
+    margin-bottom: 2em;
+}
+.button-text{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 4em;
+}
+.titreTxtBox{
+    font-family: 'Arapey';
+
+    font-size: 4em;
+    color: #FCEECD;
+    text-align: center;
+  }
+
 #contact{
   display: flex;
   justify-content: center;
