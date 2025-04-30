@@ -100,3 +100,52 @@ body {
 .logo {
   width: 20em;
 }
+.contactList{
+
+}
+#contact{
+  display: flex;
+  justify-content: center;
+}
+.social{
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+#social{
+  display: flex;
+  justify-content: center;
+  margin-right: 3em;
+
+}
+#footerLogo{
+  margin-right: 10em;
+  width: 7em;
+  height: 7em;
+}
+.icons{
+  display: flex;
+  align-items: center;
+
+}
+.icon{
+  margin-right: 3em;
+
+}
+.contactIcons{
+  margin-right: 1em;
+}
+#footer-component{
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}
+.copyright{
+  display: flex;
+  justify-content: center;
+ 
+}
+footer{
+  background-color: #0B0F22;
+
+}
