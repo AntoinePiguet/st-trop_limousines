@@ -26,13 +26,22 @@ app.component("presentation-component", {
   template:
     /*html*/
     `
-    <div v-for="(image, index) in images" :class="{contentBox1: index==0}" :class="{contentBox2: index==1}">
-        <img :src="image"/>
-        <div class="inBoxContent">
-            <div class="titreTxt">{{titles[index]}}</div>
-            <div v-for="(content, index2) in contents[index]">{{contents[index][index2]}}</div>
-            <button class="contentButton">{{buttons[index]}}</button>
+    <div class="contentBox1">
+        <img :src="images[0]"/>
+        <div class="inBoxContent1">
+            <div class="titreTxt">{{titles[0]}}</div>
+            <div v-for="(content, index2) in contents[0]">{{contents[0][index2]}}</div>
+            <button class="contentButton">{{buttons[0]}}</button>
         </div>
+    </div>
+
+    <div class="contentBox2">
+      <img :src="images[1]"/>
+    <div class="inBoxContent2">
+      <div v-for="(content, index2) in contents[1]">{{contents[1][index2]}}</div>
+        <div class="titreTxt">{{titles[1]}}</div>
+        <button class="contentButton">{{buttons[1]}}</button>
+      </div>
     </div>
     `,
 });
