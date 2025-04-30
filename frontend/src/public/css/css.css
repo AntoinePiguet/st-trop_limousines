@@ -1,20 +1,20 @@
 /* FONT IMPORT */
 @font-face {
-    font-family: 'Inter';
-    src: url('../fonts/Inter-Regular.woff2') format('woff2'),
-         url('../fonts/Inter-Regular.woff') format('woff'),
-         url('../fonts/Inter-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.woff2") format("woff2"),
+    url("../fonts/Inter-Regular.woff") format("woff"),
+    url("../fonts/Inter-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Arapey';
-    src: url('../fonts/Arapey-Regular.woff2') format('woff2'),
-         url('../fonts/Arapey-Regular.woff') format('woff'),
-         url('../fonts/Arapey-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Arapey";
+  src: url("../fonts/Arapey-Regular.woff2") format("woff2"),
+    url("../fonts/Arapey-Regular.woff") format("woff"),
+    url("../fonts/Arapey-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* MAIN */
@@ -31,12 +31,23 @@ html, body {
 }
 button{
     transition: transform 0.3s ease-in;
+    margin:0.75em 1em;
+    padding: 0.5em 1.5em;
+    background-color: #0B0F22;
+    color: #FFF3D6;
+    font-size: 1.3em;
+    border: solid 2px #FFF3D6;
+    border-radius: 5px;
+    cursor: pointer;
 }
 button:hover{
     background-color: #F4C566;
     color: #0B0F22;
     border: solid 2px #0B0F22;
     transition: transform 0.3s ease-in;
+}
+.presentation{
+
 }
 
 /* HEADER */
@@ -60,9 +71,13 @@ button:hover{
     width: 4em;
     margin-left: 0.5em;
 }
-#headerButtons{
-    display: flex;
-    grid-template-columns: repeat(4, 1fr);
+#headerLogo {
+  width: 4em;
+  margin-left: 1em;
+}
+#headerButtons {
+  display: flex;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .homeButton{
@@ -75,16 +90,6 @@ button:hover{
     font-size: 1.1em;
 }
 
-#contactButton{
-    margin-right: 0.5em;
-    padding: 0.5em 1.5em;
-    background-color: #151416;
-    color: #FFF5DF;
-    font-size: 1.3em;
-    border: solid 2px #FFF5DF;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
 /* SLIDER */
 .frontTitre{
@@ -187,41 +192,120 @@ button:hover{
 }
 
 /* contentBox */
-.contentBox{
-    position: relative;
-    height: 50vh;
-    margin-top: 24em;
-    border-radius:0 1em 1em 0;
+.contentBox1, .contentBox2 {
+    display: flex;
     
+    align-items: flex-start;
+    position: relative;
+    margin: 24em 0;
+    width: 100%;
+    overflow: hidden;
 }
-.contentBox img{
+
+
+.contentBox1 img {
     position: relative;
     height: 50vh;
     width: 85%;
     object-fit: cover;
     object-position: bottom;
-    border: solid 10px;
-    border-image: 
-    linear-gradient(
-      to left, 
-      #F4C566, 
-      rgba(0, 0, 0, 0)
-    ) 1 ;
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(to left, #F4C566, 
+    rgba(0, 0, 0, 0)) border-box;
+    border: 10px solid transparent;
+    border-radius: 15px;
+}
+
+.contentBox2 img {
+    position: relative;
+    height: 50vh;
+    width: 85%;
+    object-fit: cover;
+    object-position: bottom;
+    background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right, #F4C566, 
+    rgba(0, 0, 0, 0)) border-box;
+    border: 10px solid transparent;
+    border-radius: 15px;
+    margin-left: auto;
+}
+.overlay1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 85%;
+    height: 50vh;
+    background: rgba(0, 0, 0, 0.3);
+    margin-left: auto;
+}
+.overlay2{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 85%;
+    height: 50vh;
+    background: rgba(0, 0, 0, 0.3);
 
 }
-.inBoxContent{
+.overlay-gradient1{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 85%;
+    height: 50vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), 
+    rgba(0, 0, 0, 0));
+    margin-left: auto;
+}
+.overlay-gradient2{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 85%;
+    height: 50vh;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.6), 
+    rgba(0, 0, 0, 0));
+    margin-left: auto;
+}
+
+.inBoxContent2{
+    position: absolute;
+    display: flex;
+    justify-content: space-between; 
+    right: 0;
+    width: 70%;
+    height: 100%;
+    top: 0;
+    margin: 2em 6em;
+}
+.inBoxContent1{
     position: absolute;
     display: flex;
     justify-content: space-between;
     width: 70%;
     top: 0;
-    margin: 4em 6em;
+    margin: 3em 6em;
 }
+
 
 .Txt{
     font-family: 'Inter';
+    align-items: end;
     color: #FCEECD;
-    font-size: 1.2em;
-    width: 20em;
+    font-size: 1.3em;
+    width: 30em;
     margin-bottom: 2em;
 }
+.button-text{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 4em;
+}
+.titreTxtBox{
+    font-family: 'Arapey';
+
+    font-size: 4em;
+    color: #FCEECD;
+    text-align: center;
+  }
