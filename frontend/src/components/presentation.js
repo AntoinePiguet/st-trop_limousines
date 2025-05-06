@@ -26,29 +26,32 @@ app.component("presentation-component", {
   template:
     /*html*/
     `
-    <div class="contentBox1">
-        <img :src="images[0]"/>
-        <div class="overlay1"></div>
-        <div class="overlay-gradient1"></div>
-        <div class="inBoxContent1">
-            <div class="titreTxtBox">{{titles[0]}}</div>
-            <div class="button-text">
-                <div class="Txt" v-for="(content, index2) in contents[0]">{{contents[0][index2]}}</div>
-                <button class="contentButton">{{buttons[0]}}</button>
-            </div>
-            
-        </div>
+    <div class="gradient-border1">
+      <div class="contentBox1" :style="{ backgroundImage: 'url(' + images[0] + ')' }">
+          <div class="overlay1"></div>
+          <div class="overlay-gradient1"></div>
+          <div class="inBoxContent1">
+              <div class="titreTxtBox">{{titles[0]}}</div>
+              <div class="button-text">
+                  <div class="Txt" v-for="(content, index2) in contents[0]">{{contents[0][index2]}}</div>
+                  <button class="contentButton">{{buttons[0]}}</button>
+              </div>
+              
+          </div>
+      </div>
     </div>
 
-    <div class="contentBox2">
-      <img :src="images[1]"/>
-      <div class="overlay-gradient2"></div>
-    <div class="inBoxContent2">
-        <div class="button-text">
-            <div class="Txt" v-for="(content, index2) in contents[1]">{{contents[1][index2]}}</div>
-            <button class="contentButton">{{buttons[1]}}</button>
-        </div>
-        <div class="titreTxtBox">{{titles[1]}}</div>
+    <div class="gradient-border2">
+      <div class="contentBox2" :style="{ backgroundImage: 'url(' + images[1] + ')' }">
+          <div class="overlay2"></div>
+          <div class="overlay-gradient2"></div>
+          <div class="inBoxContent2">
+              <div class="button-text">
+                  <div class="Txt" v-for="(content, index2) in contents[1]">{{contents[1][index2]}}</div>
+                  <button class="contentButton">{{buttons[0]}}</button>
+              </div>
+              <div class="titreTxtBox">{{titles[1]}}</div>
+          </div>
       </div>
     </div>
     `,

@@ -7,7 +7,6 @@ app.component("slider-component", {
             images: [
                 "../public/images/mercedes_class-S.png",
                 "../public/images/mercedes_class-V.png",
-                
                 "../public/images/mercedes_group.png"
             ],
             logo: "../public/images/logoVariant.png",
@@ -19,29 +18,33 @@ app.component("slider-component", {
     template: 
     /*html*/
     `
-    
-    <div class="frontTitre">
-        <div class=slider>
-                <img class="sliderImg" :src="currentImage"/>
-                <div class="overlay"></div>
-                <img class="deco" :src="deco"/>
-        </div>
-        <div class="bodySlider">
-            <div class="titreDiv">
-                <img class="logo" :src="logo"/>
-                <div  class="titreTxt">
-                    Saint Tropez <br> Limousines
-                </div>
-                <p class="titreTel">{{tel}}</p>
-                <button class="bookbutton">Book</button>
+<div class="frontTitre":style="{ backgroundImage: 'url(' + currentImage + ')' }">
+    <div class="slider" >
+        <div class="overlay"></div>
+    </div>
+
+    <div class="bodySlider">
+        <div class="titreDiv">
+            <img class="logo" :src="logo" />
+            <div class="titreTxt">
+                Saint Tropez <br> Limousines
             </div>
-            <div class="imageRack">
-                <div class="imagePoint" v-for="(image, index) in images" :key="index">
-                    <button class="point" :class="{ activePoint: index === imageId }" @click="imageId = index"></button>
-                </div>
+            <p class="titreTel">{{ tel }}</p>
+            <button class="bookbutton">Book</button>
+        </div>
+
+        <div class="imageRack">
+            <div class="imagePoint" v-for="(image, index) in images" :key="index">
+                <button
+                    class="point"
+                    :class="{ activePoint: index === imageId }"
+                    @click="imageId = index"
+                ></button>
             </div>
         </div>
     </div>
+</div>
+<img class="deco" :src="deco" />
     `,
 
     watch: {
