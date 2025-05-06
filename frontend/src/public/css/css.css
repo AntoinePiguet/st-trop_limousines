@@ -197,7 +197,6 @@ button:hover {
   }
 
 .titreTel{
-
     padding: 0.5em 1.5em;
     background-color: transparent;
     color: #FCEECD;
@@ -273,8 +272,6 @@ button:hover {
   margin: 0;
 
 }
-
-
 
 .overlay1 {
     position: absolute;
@@ -420,7 +417,6 @@ button:hover {
 .copyright {
   display: flex;
   justify-content: center;
-  margin-bottom: 0.5em;
 }
 
 footer {
@@ -436,4 +432,3 @@ footer {
   background-position: top;
   color: #F4C566;
 }
-
