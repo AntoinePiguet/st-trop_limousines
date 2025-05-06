@@ -28,55 +28,84 @@ html, body {
     padding: 0;
     height: 100%;
     width: 100%;
-    color: #FFF3D6;
+    overflow-x: hidden;
+}
 
+button {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin: 0.75em 1em;
+  padding: 0.5em 1.5em;
+  background-color: #0B0F22;
+  color: #FFF3D6;
+  font-size: clamp(0.6rem, 2vw, 1.3rem);
+  border: solid 3px #FFF3D6;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
-button{
-    transition: transform 0.3s ease-in;
-    margin:0.75em 1em;
-    padding: 0.5em 1.5em;
-    background-color: #0B0F22;
-    color: #FFF3D6;
-    font-size: 1.3em;
-    border: solid 2px #FFF3D6;
-    border-radius: 5px;
-    cursor: pointer;
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #F4C566;
+  z-index: -1;
+  transition: left 0.4s ease;
 }
-button:hover{
-    background-color: #F4C566;
-    color: #0B0F22;
-    border: solid 2px #0B0F22;
-    transition: transform 0.3s ease-in;
+
+button:hover::before {
+  left: 0;
+}
+
+button:hover {
+  color: #0B0F22;
+  border: solid 3px #0B0F22;
 }
 
 /* HEADER */
-#header{
-    display: flex;
-    position: relative;
-    align-items:center;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 100%;
-    border-bottom: solid #FFF5DF 2px;
-    z-index: 50;
-    transition: top 0.3s;
+
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#header {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  background-color: #161617;
+  border-bottom: solid #FFF5DF 2px;
+  z-index: 50;
+  transition: top 0.3s;
+  animation: fadeInTop 0.8s ease-out forwards; 
 }
 
 .header-hidden {
-    top: -100px;
+  top: -100px;
 }
 
-#headerLogo{
-    width: 4em;
-    margin-left: 0.5em;
-}
 #headerLogo {
   width: 4em;
   margin-left: 1em;
 }
+
 #headerButtons {
   display: flex;
-  grid-template-columns: repeat(4, 1fr);
+  gap: 1em; 
 }
 
 .homeButton{
@@ -86,29 +115,42 @@ button:hover{
     color: #FFF5DF;
     border-right: solid #FFF5DF 2px;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: clamp(0.6rem, calc(0.5vw + 0.3rem), 1.1rem);
+}
+
+#header a {
+  position: relative;
+  text-decoration: none;
+}
+
+#header a::after {
+  content: "";
+  position: absolute;
+  left: 25%;
+  bottom: -2px;
+  width: 50%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease-out;
+}
+
+#header a:hover::after {
+  transform: scaleX(1);
 }
 
 
 /* SLIDER */
 .frontTitre{
-    width: auto;
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.slider{
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    display: block;
-    background-size: cover;
-    background-position: center;
-}
-.sliderImg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+
 .overlay {
     position: absolute;
     top: 0;
@@ -117,10 +159,11 @@ button:hover{
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
 }
-.deco{
-    width: 100%;
 
+.deco{
+  width: 100%;
 }
+
 .bodySlider{
     position: relative;
     display: flex;
@@ -129,25 +172,30 @@ button:hover{
     justify-content: space-evenly;
     width: 100%;
     top: 0;
-    height: 95vh;
+    padding: 2em 0;
 }
 
 .logo{
     width: 13em;
+    max-width: 150px;
 }
+
 .titreDiv{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-
+    margin-bottom: 5em;
   }
+
   .titreTxt{
     font-family: 'Arapey';
     margin-top: 0.75em ;
-    font-size: 4em;
+    font-size: clamp(1.3rem, calc(5vw + 1rem), 5.8rem);
     color: #FCEECD;
     text-align: center;
   }
+
 .titreTel{
 
     padding: 0.5em 1.5em;
@@ -155,203 +203,237 @@ button:hover{
     color: #FCEECD;
     border: none;
     font-family: 'Inter';
-    font-size: 2em;
-    font-size: 1.3em;
+    font-size: clamp(0.6rem, 3vw, 1.3rem);
     margin-top: 0.75em ;
     border-radius: 5px;
   }
+
 .bookbutton{
     margin:0.75em 1em;
     padding: 0.5em 1.5em;
-    background-color: #0B0F22;
-    color: #FFF3D6;
-    font-size: 1.3em;
-    border: solid 2px #FFF3D6;
-    border-radius: 5px;
     cursor: pointer;
 }
+
 .imageRack{
  display: flex;
  justify-content: space-around;
- width: 10%;
 }
+
 .point{
-    width: 1em;
-    height: 1em;
+    width: 0.6em;
+    height: 0.6em;
+    padding: none;
+    margin: none;
     border-radius: 50px;
     padding: 0;
     border: solid #FFAF47 2px;
     background-color: #3C3C3C;
     transition: transform 0.3s ease-in;
 }
+
 .activePoint{
     background-color:#FFAF47;
     border: solid #FFAF47 2px;
-    transform: translateY(-1em);
+    transform: translateY(-1em),ease-in;
 }
 
 /* contentBox */
+.gradient-border1 {
+  padding: 10px; /* taille de la bordure */
+  border-radius: 15px;
+  background: linear-gradient(to left, #F4C566, rgba(0, 0, 0, 0));
+  display: block;
+  width: 80%;
+  margin: 20em auto 20em 0;
+  margin-left: -2em;
+}
+
+.gradient-border2 {
+  padding: 10px; /* taille de la bordure */
+  border-radius: 15px;
+  background: linear-gradient(to right, #F4C566, rgba(0, 0, 0, 0));
+  display: block;
+  width: 80%;
+  margin: 20em 0 20em auto;
+  margin-right: -2em;
+}
+
 .contentBox1, .contentBox2 {
-    display: flex;
-    
-    align-items: flex-start;
-    position: relative;
-    margin: 24em 0;
-    width: 100%;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  border-radius: 15px;
+  margin: 0;
+
 }
 
 
-.contentBox1 img {
-    position: relative;
-    height: 50vh;
-    width: 85%;
-    object-fit: cover;
-    object-position: bottom;
-    background: linear-gradient(white, white) padding-box,
-    linear-gradient(to left, #F4C566, 
-    rgba(0, 0, 0, 0)) border-box;
-    border: 10px solid transparent;
-    border-radius: 15px;
-}
 
-.contentBox2 img {
-    position: relative;
-    height: 50vh;
-    width: 85%;
-    object-fit: cover;
-    object-position: bottom;
-    background: linear-gradient(white, white) padding-box,
-    linear-gradient(to right, #F4C566, 
-    rgba(0, 0, 0, 0)) border-box;
-    border: 10px solid transparent;
-    border-radius: 15px;
-    margin-left: auto;
-}
 .overlay1 {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 85%;
-    height: 50vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.3);
     margin-left: auto;
 }
+
 .overlay2{
     position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 85%;
-    height: 50vh;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.3);
 
 }
+
 .overlay-gradient1{
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 85%;
-    height: 50vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.6), 
     rgba(0, 0, 0, 0));
     margin-left: auto;
 }
+
 .overlay-gradient2{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 85%;
-    height: 50vh;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.6), 
-    rgba(0, 0, 0, 0));
-    margin-left: auto;
-}
-
-.inBoxContent2{
-    position: absolute;
-    display: flex;
-    justify-content: space-between; 
-    right: 0;
-    width: 70%;
-    height: 100%;
-    top: 0;
-    margin: 2em 6em;
-}
-.inBoxContent1{
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
-    top: 0;
-    margin: 3em 6em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.6), 
+  rgba(0, 0, 0, 0));
+  margin-left: auto;
 }
 
 
-.Txt{
-    font-family: 'Inter';
-    align-items: end;
-    color: #FCEECD;
-    font-size: 1.3em;
-    width: 30em;
-    margin-bottom: 2em;
+.inBoxContent2 {
+  position:relative;
+  display: grid;
+  width: 85%;
+  right: 0;
+  height: fit-content;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 2em; 
+  margin: 3em auto;
 }
+
+.inBoxContent1 {
+  position: relative;
+  display: grid;
+  width: 85%;
+  height: auto;
+  overflow: hidden;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 2em; 
+  margin: 3em auto;
+}
+
+.Txt {
+  font-family: 'Inter';
+  color: #FCEECD;
+  font-size: clamp(0.6rem, 2vw, 2rem);
+  margin-bottom: clamp(0.6rem, 1.5vw, 2rem);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
 .button-text{
     display: flex;
     flex-direction: column;
     align-items: start;
     margin-top: 4em;
 }
+
 .titreTxtBox{
     font-family: 'Arapey';
-
-    font-size: 4em;
+    font-size: clamp(1.5rem,4vw, 4rem);
     color: #FCEECD;
     text-align: center;
   }
 
-#contact{
+/* Footer */
+#contact {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-.social{
-display: flex;
-flex-direction: column;
-justify-content: center;
+
+.social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-#social{
+
+#social {
   display: flex;
   justify-content: center;
   margin-right: 3em;
-
 }
-#footerLogo{
+
+#footerLogo {
   margin-right: 10em;
   width: 7em;
   height: 7em;
 }
-.icons{
+
+.icons {
   display: flex;
+  justify-content: space-around;
+}
+
+.contact li {
+  display: flex; 
   align-items: center;
-
+  vertical-align: middle;
+  margin-right: 2em;
 }
-.icon{
+
+.icon {
   margin-right: 3em;
-
 }
-.contactIcons{
+
+.contactIcons {
   margin-right: 1em;
 }
-#footer-component{
+
+#footer-component {
   display: flex;
   justify-content: space-between;
   padding: 2em;
+  padding-bottom: 0.5em;
 }
-.copyright{
+
+.copyright {
   display: flex;
   justify-content: center;
- 
+  margin-bottom: 0.5em;
 }
-footer{
-  background-color: #0B0F22;
 
+footer {
+  background-color: #161617;
+  background-image: linear-gradient(
+    to left, 
+    rgba(0, 0, 0, 0), 
+    #F4C566, 
+    rgba(0, 0, 0, 0)
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 10px;
+  background-position: top;
+  color: #F4C566;
 }
+
