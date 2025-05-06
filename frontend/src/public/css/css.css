@@ -21,14 +21,33 @@
 
 
 html, body {
-    background-color: #0D0D0E;
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden;
+  background-color: #0D0D0E;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+p{
+  font-family: 'Inter';
+  color: #FCEECD;
+  font-weight: 300;
+  font-size: clamp(0.6rem, 2vw, 1rem);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-align: center;
+}
+h2{
+  font-family: 'Aparey';
+  color: #FCEECD;
+  font-weight: 300;
+  font-size: clamp(0.6rem,4vw, 2.5rem);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  margin: 0;
 }
 
 button {
@@ -44,6 +63,15 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: color 0.3s ease;
+}
+h1{
+  font-weight:100;
+  text-align: start;
+  font-family: 'Arapey';
+  padding: 0.5em 2em ;
+  margin-top: 0.75em;
+  font-size: clamp(1.3rem, calc(5vw + 1rem), 5.8rem);
+  color: #FCEECD;
 }
 
 button::before {
@@ -109,13 +137,13 @@ button:hover {
 }
 
 .homeButton{
-    font-family: 'Inter';
-    font-weight: 500;
-    padding:0.5em 3em;
-    color: #FFF5DF;
-    border-right: solid #FFF5DF 2px;
-    text-decoration: none;
-    font-size: clamp(0.6rem, calc(0.5vw + 0.3rem), 1.1rem);
+  font-family: 'Inter';
+  font-weight: 500;
+  padding:0.5em 3em;
+  color: #FFF5DF;
+  border-right: solid #FFF5DF 2px;
+  text-decoration: none;
+  font-size: clamp(0.6rem, calc(0.5vw + 0.3rem), 1.1rem);
 }
 
 #header a {
@@ -152,12 +180,12 @@ button:hover {
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .deco{
@@ -165,80 +193,80 @@ button:hover {
 }
 
 .bodySlider{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    top: 0;
-    padding: 2em 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  top: 0;
+  padding: 2em 0;
 }
 
 .logo{
-    width: 13em;
-    max-width: 150px;
+  width: 13em;
+  max-width: 150px;
 }
 
 .titreDiv{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 5em;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 5em;
+}
 
   .titreTxt{
-    font-family: 'Arapey';
-    margin-top: 0.75em ;
-    font-size: clamp(1.3rem, calc(5vw + 1rem), 5.8rem);
-    color: #FCEECD;
-    text-align: center;
-  }
+  font-family: 'Arapey';
+  margin-top: 0.75em ;
+  font-size: clamp(1.3rem, calc(5vw + 1rem), 5.8rem);
+  color: #FCEECD;
+  text-align: center;
+}
 
 .titreTel{
-    padding: 0.5em 1.5em;
-    background-color: transparent;
-    color: #FCEECD;
-    border: none;
-    font-family: 'Inter';
-    font-size: clamp(0.6rem, 3vw, 1.3rem);
-    margin-top: 0.75em ;
-    border-radius: 5px;
-  }
+  padding: 0.5em 1.5em;
+  background-color: transparent;
+  color: #FCEECD;
+  border: none;
+  font-family: 'Inter';
+  font-size: clamp(0.6rem, 3vw, 1.3rem);
+  margin-top: 0.75em ;
+  border-radius: 5px;
+}
 
 .bookbutton{
-    margin:0.75em 1em;
-    padding: 0.5em 1.5em;
-    cursor: pointer;
+  margin:0.75em 1em;
+  padding: 0.5em 1.5em;
+  cursor: pointer;
 }
 
 .imageRack{
- display: flex;
- justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .point{
-    width: 0.6em;
-    height: 0.6em;
-    padding: none;
-    margin: none;
-    border-radius: 50px;
-    padding: 0;
-    border: solid #FFAF47 2px;
-    background-color: #3C3C3C;
-    transition: transform 0.3s ease-in;
+  width: 0.6em;
+  height: 0.6em;
+  padding: none;
+  margin: none;
+  border-radius: 50px;
+  padding: 0;
+  border: solid #FFAF47 2px;
+  background-color: #3C3C3C;
+  transition: transform 0.3s ease-in;
 }
 
 .activePoint{
-    background-color:#FFAF47;
-    border: solid #FFAF47 2px;
-    transform: translateY(-1em),ease-in;
+  background-color:#FFAF47;
+  border: solid #FFAF47 2px;
+  transform: translateY(-1em),ease-in;
 }
 
 /* contentBox */
 .gradient-border1 {
-  padding: 10px; /* taille de la bordure */
+  padding: 10px;
   border-radius: 15px;
   background: linear-gradient(to left, #F4C566, rgba(0, 0, 0, 0));
   display: block;
@@ -248,7 +276,7 @@ button:hover {
 }
 
 .gradient-border2 {
-  padding: 10px; /* taille de la bordure */
+  padding: 10px;
   border-radius: 15px;
   background: linear-gradient(to right, #F4C566, rgba(0, 0, 0, 0));
   display: block;
@@ -274,34 +302,34 @@ button:hover {
 }
 
 .overlay1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    margin-left: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  margin-left: auto;
 }
 
 .overlay2{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
 
 }
 
 .overlay-gradient1{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), 
-    rgba(0, 0, 0, 0));
-    margin-left: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), 
+  rgba(0, 0, 0, 0));
+  margin-left: auto;
 }
 
 .overlay-gradient2{
@@ -349,18 +377,88 @@ button:hover {
 }
 
 .button-text{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    margin-top: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 4em;
 }
 
 .titreTxtBox{
-    font-family: 'Arapey';
-    font-size: clamp(1.5rem,4vw, 4rem);
-    color: #FCEECD;
-    text-align: center;
-  }
+  font-family: 'Arapey';
+  font-size: clamp(1.5rem,4vw, 4rem);
+  color: #FCEECD;
+  text-align: center;
+}
+/* */
+
+/* Fleet */
+.fleetFlex{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10em 0 20em 0;
+}
+
+.FleetBox{
+  width: 30%;
+  padding: 5px;
+  border-radius: 5px;
+  background: linear-gradient(to left, #F4C566, rgba(0, 0, 0, 0));
+  display: block;
+  margin-left: 1em;
+  text-align: center;
+}
+.bg{
+  width: 100%;
+  background-color: #151416;
+  padding: 1em 0;
+}
+.imageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin:0 5%;
+}
+.outer-ellipse {
+  position: absolute;
+  bottom: 15%;
+  left: 45%;
+  transform: translateX(-50%);
+  width: 70%;
+  aspect-ratio: 4 / 1;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #F4C566, rgba(0, 0, 0, 0), #F4C566);
+  background-color: #1E1B1B;
+  -webkit-mask: radial-gradient(ellipse at center, transparent 69%, #1E1B1B 70%);
+  mask: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.05) 68%, rgba(0, 0, 0, 1) 70%);
+  max-width: 600px;
+  z-index: 0;
+}
+
+.carImage {
+  position: relative;
+  width: 100%;
+  display: block;
+  z-index: 1;
+}
+.luggage-passenger{
+  width: 100%;
+  margin: 0 auto 3em auto;
+}
+.luggage, .passenger{
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+.FleetIcon{
+  width: 30px;
+  height: 30px;
+}
+
+/*  */
 
 /* Footer */
 #contact {
@@ -431,4 +529,9 @@ footer {
   background-size: 100% 10px;
   background-position: top;
   color: #F4C566;
+  width: 100%;
+}
+footer p{
+  margin: 0;
+  padding: 0.5em;
 }
