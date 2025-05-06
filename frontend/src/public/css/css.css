@@ -28,6 +28,8 @@ html, body {
     padding: 0;
     height: 100%;
     width: 100%;
+    color: #FFF3D6;
+
 }
 button{
     transition: transform 0.3s ease-in;
