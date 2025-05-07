@@ -27,7 +27,7 @@ app.component("slider-component", {
         <div class="titreDiv">
             <img class="logo" :src="logo" />
             <div class="titreTxt">
-                Saint Tropez <br> Limousines
+                Saint-Tropez <br> Limousines
             </div>
             <p class="titreTel">{{ tel }}</p>
             <button class="bookbutton">Book</button>
