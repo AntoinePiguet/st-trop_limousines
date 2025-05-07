@@ -30,10 +30,28 @@ html, body {
   width: 100%;
   overflow-x: hidden;
 }
+input, textarea{
+  border: #FFAF47 3px solid;
+  background: #1E1B1B;
+  border-radius: 5px;
+  color: #FCEECD;
+  font-size:clamp(0.6rem,2vw, 1rem);
+  line-height: 4vh;
+}
+label{
+  color: #FCEECD;
+  font-family: 'Inter';
+}
+h3{
+  font-family: 'Aparey';
+  color: #FCEECD;
+  font-weight: 100;
+  font-size:clamp(0.6rem,3vw, 2rem);
+}
 
 p{
   font-family: 'Inter';
-  color: #FCEECD;
+  color: #FFF5DF;
   font-weight: 300;
   font-size: clamp(0.6rem, 2vw, 1rem);
   overflow-wrap: break-word;
@@ -369,7 +387,7 @@ button:hover {
 .Txt {
   font-family: 'Inter';
   color: #FCEECD;
-  font-size: clamp(0.6rem, 2vw, 2rem);
+  font-size: clamp(0.6rem, 2vw, 1.2rem);
   margin-bottom: clamp(0.6rem, 1.5vw, 2rem);
   overflow-wrap: break-word;
   word-break: break-word;
@@ -460,17 +478,57 @@ button:hover {
 
 /*  */
 
+/* Book */
+.book-box{
+  display: grid;
+grid-template-columns: repeat(2,1fr);
+  gap: 5em;
+  margin: 0 10vw;
+  margin-bottom: 24vh;
+}
+.BookForm{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.book-content{
+  text-align: center;
+  width: 100%;
+}
+.form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0 ;
+}
+label span{
+  color: #FF3030;
+  margin:5px;
+}
+#BookForm-Message{
+  line-height: normal;
+  padding-bottom: 16vh;
+}
+.submitButton{
+  margin: 3vh 0 0 auto;
+  justify-content: end;
+  width: fit-content;
+}
+
+/*  */
+
 /* Footer */
 #contact {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 
 .social {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
+  
 }
 
 #social {
@@ -481,8 +539,8 @@ button:hover {
 
 #footerLogo {
   margin-right: 10em;
-  width: 7em;
-  height: 7em;
+  width: 5em;
+  height: 5em;
 }
 
 .icons {
@@ -499,6 +557,7 @@ button:hover {
 
 .icon {
   margin-right: 3em;
+  margin-top:1em ;
 }
 
 .contactIcons {
@@ -534,4 +593,13 @@ footer {
 footer p{
   margin: 0;
   padding: 0.5em;
+  color: #F4C566;
+}
+footer h3{
+  margin: 0;
+  font-size: clamp(1.5rem,1.5vw, 1.5rem);
+  color: #F4C566;
+  font-family: 'Inter';
+  font-weight: 600;
+  
 }
