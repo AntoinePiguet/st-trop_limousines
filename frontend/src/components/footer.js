@@ -17,7 +17,6 @@ template:
     <footer id="footer">
         <div id="footer-component">
             <div class="contact">
-                <h3 id="contact">Contact</h3>
                 <ul class="contactList">
                     <li v-for="(text, index) in texts" :key="index">
                         <img :src="icons[index]" class="contactIcons" width="24" height="24" />
@@ -29,7 +28,6 @@ template:
             <img :src="logo" id="footerLogo" />
 
             <div class="social">
-                <h3 id="social">Social</h3>
                 <div class="icons">
                     <a v-for="(photo, index) in photos" :key="index" :href="links[index]">
                         <img :src="photos[index]" class="icon" width="34" height="34" />

@@ -4,7 +4,7 @@
   src: url("../fonts/Inter-Regular.woff2") format("woff2"),
     url("../fonts/Inter-Regular.woff") format("woff"),
     url("../fonts/Inter-Regular.ttf") format("truetype");
-  font-weight: normal;
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -112,6 +112,15 @@ button:hover {
   color: #0B0F22;
   border: solid 3px #0B0F22;
 }
+.templateContainer {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size:200vh; /* taille auto en largeur */
+  background-position-x: 30vw;
+  background-position-y: 60vh;
+  overflow: hidden;
+}
+/*  */
 
 /* HEADER */
 
@@ -289,7 +298,7 @@ button:hover {
   background: linear-gradient(to left, #F4C566, rgba(0, 0, 0, 0));
   display: block;
   width: 80%;
-  margin: 20em auto 20em 0;
+  margin: 10em auto 20em 0;
   margin-left: -2em;
 }
 
@@ -407,7 +416,31 @@ button:hover {
   color: #FCEECD;
   text-align: center;
 }
+
 /* */
+
+/* Home Booking */
+.home-booking{
+  width: 100%;
+}
+.home-booking .book-box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0;
+}
+.home-booking .BookForm{
+  width: 30%;
+}
+.home-booking h2{
+  width: 100%;
+  font-size: clamp(1.5rem,4vw, 4rem);
+  margin: 1em auto;
+  text-align: center;
+}
+
+/*  */
 
 /* Fleet */
 .fleetFlex{
@@ -527,7 +560,7 @@ label span{
 .social {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   
 }
 
@@ -538,14 +571,14 @@ label span{
 }
 
 #footerLogo {
-  margin-right: 10em;
+  margin: auto;
   width: 5em;
   height: 5em;
 }
 
 .icons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .contact li {
@@ -553,6 +586,7 @@ label span{
   align-items: center;
   vertical-align: middle;
   margin-right: 2em;
+  font-size: 0.8em;
 }
 
 .icon {
@@ -565,8 +599,9 @@ label span{
 }
 
 #footer-component {
-  display: flex;
-  justify-content: space-between;
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-content: center;
   padding: 2em;
   padding-bottom: 0.5em;
 }
@@ -594,12 +629,4 @@ footer p{
   margin: 0;
   padding: 0.5em;
   color: #F4C566;
-}
-footer h3{
-  margin: 0;
-  font-size: clamp(1.5rem,1.5vw, 1.5rem);
-  color: #F4C566;
-  font-family: 'Inter';
-  font-weight: 600;
-  
 }
