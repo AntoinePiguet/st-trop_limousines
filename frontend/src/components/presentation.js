@@ -1,4 +1,21 @@
 app.component("presentation-component", {
+  mounted() {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const animation = el.getAttribute('data-animate');
+          if (animation) {
+            el.className = el.className.replace('to-animate', '').trim() + ' ' + animation;
+            obs.unobserve(el);
+          }
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.to-animate[data-animate]').forEach(el => {
+      observer.observe(el);
+    });
+  },
   props: {},
   data() {
     return {
@@ -27,31 +44,30 @@ app.component("presentation-component", {
   template:
     /*html*/
     `
-    <div class="gradient-border1">
+    <div class="gradient-border1 to-animate" data-animate="expand-width fade-in duration-700 ease-in">
       <div class="contentBox1" :style="{ backgroundImage: 'url(' + images[1] + ')' }">
           <div class="overlay1"></div>
           <div class="overlay-gradient1"></div>
           <div class="inBoxContent1">
-              <div class="titreTxtBox">{{titles[1]}}</div>
-              <div class="button-text">
-                  <div class="Txt" v-for="(content, index2) in contents[1]">{{contents[1][index2]}}</div>
-                  <button class="contentButton">{{buttons[1]}}</button>
-              </div>
-              
+              <div class="titreTxtBox to-animate" data-animate="slide-in-top fade-in delay-300 duration-500 ease">{{titles[1]}}</div>
+<div class="button-text">
+    <div class="Txt to-animate" data-animate="fade-in delay-500 duration-500 ease" v-for="(content, index2) in contents[1]">{{contents[1][index2]}}</div>
+    <button class="contentButton to-animate" data-animate="slide-in-bottom fade-in delay-700 duration-500 ease">{{buttons[1]}}</button>
+</div>
           </div>
       </div>
     </div>
 
-    <div class="gradient-border2">
+    <div class="gradient-border2 to-animate" data-animate="expand-width fade-in duration-700 ease-in">
       <div class="contentBox2" :style="{ backgroundImage: 'url(' + images[0] + ')' }">
           <div class="overlay2"></div>
           <div class="overlay-gradient2"></div>
           <div class="inBoxContent2">
-              <div class="button-text">
-                  <div class="Txt" v-for="(content, index2) in contents[0]">{{contents[0][index2]}}</div>
-                  <button class="contentButton">{{buttons[0]}}</button>
-              </div>
-              <div class="titreTxtBox">{{titles[0]}}</div>
+              <div class="titreTxtBox to-animate" data-animate="slide-in-top fade-in delay-300 duration-500 ease">{{titles[0]}}</div>
+<div class="button-text">
+    <div class="Txt to-animate" data-animate="fade-in delay-500 duration-500 ease" v-for="(content, index2) in contents[0]">{{contents[0][index2]}}</div>
+    <button class="contentButton to-animate" data-animate="slide-in-bottom fade-in delay-700 duration-500 ease">{{buttons[0]}}</button>
+</div>
           </div>
       </div>
     </div>
