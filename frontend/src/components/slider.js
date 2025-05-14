@@ -25,12 +25,10 @@ app.component("slider-component", {
 
     <div class="bodySlider">
         <div class="titreDiv">
-            <img class="logo" :src="logo" />
-            <div class="titreTxt">
-                Saint-Tropez <br> Limousines
-            </div>
-            <p class="titreTel">{{ tel }}</p>
-            <button class="bookbutton">Book</button>
+            <img class="logo slide-in-top delay-150 duration-500 ease-in" :src="logo" />
+<div class="titreTxt slide-in-bottom fade-in delay-300 duration-500 ease-in">Saint-Tropez <br> Limousines</div>
+<p class="titreTel slide-in-right fade-in delay-450 duration-500 ease-in">{{ tel }}</p>
+<button class="bookbutton slide-in-top fade-in delay-600 duration-500 ease-out ">Book</button>
         </div>
 
         <div class="imageRack">
